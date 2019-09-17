@@ -29,8 +29,8 @@ namespace SalesWebMvc.Controllers
         public IActionResult Create()
         {
             var departments = _departmentService.FindAll();
-            var viewMOdel = new SellerFormViewModel { Departments = departments };
-            return View();
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            return View(viewModel); //tava passando null, por isso estava crashando
         }
 
         [HttpPost]
